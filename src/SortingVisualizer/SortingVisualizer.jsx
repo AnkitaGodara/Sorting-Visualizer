@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef,useCallback } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 
 import "./SortingVisualizer.css";
 
@@ -15,13 +15,9 @@ import algorithmInfo from "../data/algorithmInfo";
 
 function SortingVisualizer() {
   const [array, setArray] = useState([]);
-
   const [speed, setSpeed] = useState(20);
-
   const [arraySize, setArraySize] = useState(50);
-
   const [isSorting, setIsSorting] = useState(false);
-
   const [currentAlgorithm, setCurrentAlgorithm] = useState("");
 
   const stopSortingRef = useRef(false);
@@ -31,24 +27,23 @@ function SortingVisualizer() {
   }
 
   const generateArray = useCallback(() => {
-  if (isSorting) return;
+    if (isSorting) return;
 
-  const arr = [];
+    const arr = [];
 
-  for (let i = 0; i < arraySize; i++) {
-    arr.push(randomInt(20, 500));
-  }
+    for (let i = 0; i < arraySize; i++) {
+      arr.push(randomInt(20, 500));
+    }
 
-  setArray(arr);
-}, [arraySize, isSorting]);
+    setArray(arr);
+  }, [arraySize, isSorting]);
 
-useEffect(() => {
-  generateArray();
-}, [generateArray]);
+  useEffect(() => {
+    generateArray();
+  }, [generateArray]);
 
   function stopSorting() {
     stopSortingRef.current = true;
-
     setIsSorting(false);
   }
 
@@ -67,7 +62,6 @@ useEffect(() => {
           if (stopSortingRef.current) return;
 
           arrayBars[barOneIdx].style.backgroundColor = compareColor;
-
           arrayBars[barTwoOrHeight].style.backgroundColor = compareColor;
         }, i * speed);
       } else if (type === "revert") {
@@ -75,7 +69,6 @@ useEffect(() => {
           if (stopSortingRef.current) return;
 
           arrayBars[barOneIdx].style.backgroundColor = "cyan";
-
           arrayBars[barTwoOrHeight].style.backgroundColor = "cyan";
         }, i * speed);
       } else if (type === "swap") {
@@ -189,7 +182,7 @@ useEffect(() => {
       </div>
 
       <div className="slider-container">
-        <p>Animation Speed :{speed}</p>
+        <p>Animation Speed : {speed}</p>
 
         <input
           type="range"
@@ -201,7 +194,7 @@ useEffect(() => {
       </div>
 
       <div className="slider-container">
-        <p>Array Size :{arraySize}</p>
+        <p>Array Size : {arraySize}</p>
 
         <input
           type="range"
@@ -233,7 +226,7 @@ useEffect(() => {
               {algorithmInfo[currentAlgorithm].description.map(
                 (text, index) => (
                   <p key={index}>{text}</p>
-                ),
+                )
               )}
 
               <h3>How it works:</h3>
@@ -245,13 +238,18 @@ useEffect(() => {
               </ul>
 
               <div className="complexity">
-                <p>Best :{algorithmInfo[currentAlgorithm].complexity.best}</p>
-
                 <p>
-                  Average :{algorithmInfo[currentAlgorithm].complexity.average}
+                  Best : {algorithmInfo[currentAlgorithm].complexity.best}
                 </p>
 
-                <p>Worst :{algorithmInfo[currentAlgorithm].complexity.worst}</p>
+                <p>
+                  Average :
+                  {algorithmInfo[currentAlgorithm].complexity.average}
+                </p>
+
+                <p>
+                  Worst : {algorithmInfo[currentAlgorithm].complexity.worst}
+                </p>
               </div>
             </div>
           )}
