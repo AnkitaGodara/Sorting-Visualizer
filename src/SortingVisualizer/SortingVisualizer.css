@@ -1,0 +1,268 @@
+body {
+
+    margin: 0;
+
+    padding: 0;
+
+    font-family: Arial, sans-serif;
+
+    background-color: #fff1e6;
+
+    color: #6d6875;
+}
+
+
+
+/* MAIN CONTAINER */
+
+.container {
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+
+
+/* TITLE */
+
+h1 {
+
+    font-size: 42px;
+
+    margin-bottom: 20px;
+
+    color: #b5838d;
+}
+
+
+
+/* BUTTONS */
+
+.buttons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+
+
+button {
+
+    padding: 10px 18px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background-color: #ffb4a2;
+
+    color: white;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+    font-weight: 600;
+}
+
+
+
+button:hover {
+
+    background-color: #e5989b;
+
+    transform: translateY(-2px);
+}
+
+
+
+button:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+
+/* SLIDERS */
+
+.slider-container {
+
+    margin: 18px 0;
+}
+
+
+
+.slider-container p {
+
+    margin-bottom: 8px;
+
+    font-weight: 600;
+}
+
+
+
+input[type="range"] {
+
+    width: 250px;
+
+    accent-color: #e5989b;
+}
+
+
+
+/* MAIN LAYOUT */
+
+.main-content {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    gap: 30px;
+
+    margin-top: 30px;
+
+    flex-wrap: wrap;
+}
+
+
+
+/* ARRAY AREA */
+
+.array-container {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+    height: 550px;
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 2px 10px rgba(0,0,0,0.08);
+
+    overflow: hidden;
+}
+
+
+
+/* ARRAY BARS */
+
+.array-bar {
+
+    background-color: #e5989b;
+
+    width: 8px;
+
+    margin: 0 1px;
+
+    border-radius: 3px;
+
+    transition:
+        height 0.15s ease,
+        background-color 0.15s ease;
+}
+
+
+
+/* INFO PANEL */
+
+.info-panel {
+
+    width: 350px;
+
+    background: white;
+
+    padding: 24px;
+
+    border-radius: 16px;
+
+    text-align: left;
+
+    line-height: 1.7;
+
+    box-shadow:
+        0 2px 10px rgba(0,0,0,0.08);
+}
+
+
+
+.info-panel h2 {
+
+    margin-top: 0;
+
+    color: #b5838d;
+}
+
+
+
+.info-panel h3 {
+
+    margin-top: 20px;
+
+    color: #6d6875;
+}
+
+
+
+.info-panel ul {
+
+    padding-left: 20px;
+}
+
+
+
+/* COMPLEXITY */
+
+.complexity {
+
+    margin-top: 20px;
+
+    padding-top: 12px;
+
+    border-top:
+        1px solid #f0d7d1;
+}
+
+
+
+.complexity p {
+
+    margin: 6px 0;
+
+    font-weight: 600;
+}
+
+
+
+/* FOOTER */
+
+.footer {
+
+    margin-top: 40px;
+
+    color: #8d7b83;
+
+    font-size: 14px;
+}
