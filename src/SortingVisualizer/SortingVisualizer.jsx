@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef,useCallback } from "react";
 
 import "./SortingVisualizer.css";
 
@@ -26,29 +26,25 @@ function SortingVisualizer() {
 
   const stopSortingRef = useRef(false);
 
-  useEffect(() => {
-    generateArray();
-  }, []);
-
-  useEffect(() => {
-    generateArray();
-  }, [arraySize]);
-
   function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
-  function generateArray() {
-    if (isSorting) return;
+  const generateArray = useCallback(() => {
+  if (isSorting) return;
 
-    const arr = [];
+  const arr = [];
 
-    for (let i = 0; i < arraySize; i++) {
-      arr.push(randomInt(20, 500));
-    }
-
-    setArray(arr);
+  for (let i = 0; i < arraySize; i++) {
+    arr.push(randomInt(20, 500));
   }
+
+  setArray(arr);
+}, [arraySize, isSorting]);
+
+useEffect(() => {
+  generateArray();
+}, [generateArray]);
 
   function stopSorting() {
     stopSortingRef.current = true;
